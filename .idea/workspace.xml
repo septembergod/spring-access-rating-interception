@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeee676c-e801-4ea6-a448-5a988e6348c9" name="Default Changelist" comment="" />
+    <list default="true" id="aeee676c-e801-4ea6-a448-5a988e6348c9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +25,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\test-project\spring-access-rating-interception" />
+        <option value="D:\test-project\spring-access-rating-interception\.idea" />
+      </set>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -178,12 +188,24 @@
       <workItem from="1585814326040" duration="3355000" />
       <workItem from="1586141489235" duration="29862000" />
       <workItem from="1586259872113" duration="2405000" />
-      <workItem from="1586309431107" duration="1606000" />
+      <workItem from="1586309431107" duration="1900000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1586311197291</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586311197291</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="862" y="230" key="#SpringRatingApplication" timestamp="1586261615922">
@@ -207,10 +229,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="834" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586258172498" />
-    <state x="456" y="114" key="CommitChangelistDialog2" timestamp="1586311053895">
+    <state x="456" y="114" key="CommitChangelistDialog2" timestamp="1586311196431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="456" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586311053895" />
+    <state x="456" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586311196431" />
     <state width="987" height="433" key="DebuggerActiveHint" timestamp="1586310432394">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -289,10 +311,10 @@
     </state>
     <state x="461" y="156" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586310886907" />
     <state x="615" y="218" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586259809869" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1586311102656">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1586311213886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586311102656" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586311213886" />
     <state x="821" y="323" width="896" height="912" key="run.anything.popup" timestamp="1586141915095">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
