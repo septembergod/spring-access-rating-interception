@@ -4,8 +4,7 @@ import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.util.ObjectUtils;
 import org.zspace.common.security.rating.config.util.RateLimiter;
-import org.zspace.common.security.rating.util.WebUtils;
-import org.zspace.common.security.rating.web.filter.SpringRatingFilter;
+import org.zspace.common.security.rating.util.ContextUtil;
 
 import java.lang.reflect.Method;
 
@@ -20,14 +19,14 @@ public class DefaultVoterDecision implements VoterDecision<Object> {
         /**
          * 此处对请求是否能访问具体判断
          */
-        if(obj instanceof MethodInvocation){
+        if (obj instanceof MethodInvocation) {
             MethodInvocation mi = (MethodInvocation) obj;
             String key = key(mi);
             RateLimiter limiter = accessRecord.query(key);
-            if(ObjectUtils.isEmpty(limiter)){
-                synchronized (this.mutex){
+            if (ObjectUtils.isEmpty(limiter)) {
+                synchronized (this.mutex) {
                     limiter = accessRecord.query(key);
-                    if(ObjectUtils.isEmpty(limiter)){
+                    if (ObjectUtils.isEmpty(limiter)) {
                         String attr = attribute.getAttribute();
                         int value = Integer.parseInt(attr);
                         accessRecord.save(key, RateLimiter.create(value));
@@ -39,7 +38,7 @@ public class DefaultVoterDecision implements VoterDecision<Object> {
              * 返回的等待时间
              */
             double waite = limiter.acquire();
-            if(waite > 0){
+            if (waite > 0) {
                 return false;
             }
             return true;
@@ -52,15 +51,15 @@ public class DefaultVoterDecision implements VoterDecision<Object> {
         return true;
     }
 
-    private String key(MethodInvocation mi){
+    private String key(MethodInvocation mi) {
         String key = "";
-        String ip = WebUtils.getIpAddress(SpringRatingFilter.get().getRequest());
+        String ip = ContextUtil.getIP();
         key = key + ip;
         Method method = mi.getMethod();
         key = key + ":" + method.getDeclaringClass().getName();
-        key = key + ":" +  method.getName();
+        key = key + ":" + method.getName();
         Class<?>[] clss = method.getParameterTypes();
-        if(clss != null ){
+        if (clss != null) {
             for (int i = 0; i < clss.length; i++) {
                 Class<?> cls = clss[i];
                 key = key + ":" + cls.getSimpleName();

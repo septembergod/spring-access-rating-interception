@@ -41,10 +41,12 @@ public class MethodRatingMetadataSourceAdvisor extends AbstractPointcutAdvisor
         this.metadataSourceBeanName = attributeSourceBeanName;
     }
 
+    @Override
     public Pointcut getPointcut() {
         return pointcut;
     }
 
+    @Override
     public Advice getAdvice() {
         synchronized (this.adviceMonitor) {
             if (interceptor == null) {
@@ -59,12 +61,14 @@ public class MethodRatingMetadataSourceAdvisor extends AbstractPointcutAdvisor
         }
     }
 
+    @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
     }
 
     class MethodSecurityMetadataSourcePointcut extends StaticMethodMatcherPointcut
             implements Serializable {
+        @Override
         @SuppressWarnings("unchecked")
         public boolean matches(Method m, Class targetClass) {
             Collection attributes = attributeSource.getAttributes(m, targetClass);
