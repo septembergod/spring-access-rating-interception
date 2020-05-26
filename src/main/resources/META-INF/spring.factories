@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.zspace.common.security.rating.web.comfig.SpringRatingAutoConfiguratino
+org.springframework.boot.autoconfigure.EnableAutoConfiguration

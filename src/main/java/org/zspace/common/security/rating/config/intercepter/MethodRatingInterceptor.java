@@ -1,16 +1,13 @@
 package org.zspace.common.security.rating.config.intercepter;
 
-import com.google.common.collect.Maps;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.InterceptorStatusToken;
 import org.springframework.security.access.method.MethodSecurityMetadataSource;
+import org.zspace.common.security.rating.util.ContextUtil;
 import org.zspace.common.security.rating.util.HttpResponseUtil;
-import org.zspace.common.security.rating.web.filter.SpringRatingFilter;
-
-import java.util.Map;
 
 /**
  * 具体的方法拦截逻辑 -- 对执行进行拦截处理
@@ -23,13 +20,12 @@ public class MethodRatingInterceptor extends AbstractRatingInterceptor implement
     public Object invoke(MethodInvocation mi) throws Throwable {
         try {
             InterceptorStatusToken token = super.beforeInvocation(mi);
-        }
-        catch (AccessDeniedException accessDeniedException) {
+        } catch (AccessDeniedException accessDeniedException) {
             /**
              * 如果拒绝访问，表示此事访问超过访问限制
              */
 
-            HttpResponseUtil.writeToResponse(SpringRatingFilter.get().getResponse(), HttpResponseUtil.frequentlyResponse());
+            HttpResponseUtil.writeToResponse(ContextUtil.getResponse(), HttpResponseUtil.frequentlyResponse());
             return null;
         }
         Object result = mi.proceed();
@@ -45,6 +41,7 @@ public class MethodRatingInterceptor extends AbstractRatingInterceptor implement
         return this.securityMetadataSource;
     }
 
+    @Override
     public SecurityMetadataSource obtainSecurityMetadataSource() {
         return this.securityMetadataSource;
     }

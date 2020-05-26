@@ -22,6 +22,7 @@ public abstract class AbstractRatingInterceptor implements InitializingBean{
 
     private AccessDecisionManager accessDecisionManager;
 
+    @Override
     public void afterPropertiesSet() throws Exception {
         Assert.notNull(this.accessDecisionManager, "An AccessDecisionManager is required");
         Assert.notNull(this.obtainSecurityMetadataSource(), "An SecurityMetadataSource is required");
